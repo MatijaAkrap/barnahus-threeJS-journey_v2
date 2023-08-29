@@ -1,9 +1,9 @@
 import { useGLTF } from '@react-three/drei';
 
 const Scene = () => {
-	const barnahus = useGLTF('./Scene/barnahus.glb');
+	const barnahus = useGLTF('./Scene/Barnahus.glb');
 
-	return <primitive position={[0.5, -1, 0]} object={barnahus.scene} />;
+	return <primitive position={[0.5, -1.2, 0]} object={barnahus.scene} />;
 };
 
 export default Scene;
