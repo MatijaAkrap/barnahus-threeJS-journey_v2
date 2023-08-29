@@ -6,6 +6,10 @@ const Scene = () => {
 	barnahus.scene.traverse((obj: any) => {
 		obj.castShadow = true;
 		obj.receiveShadow = true;
+		if (obj.material && obj.material.metalness === 1) {
+			obj.material.metalness = 0.5;
+			obj.material.roughness = 0.4;
+		}
 	});
 
 	return <primitive position={[0.5, -1.2, 0]} object={barnahus.scene} />;

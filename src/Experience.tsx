@@ -2,7 +2,6 @@ import { OrbitControls, OrthographicCamera } from '@react-three/drei';
 import { Suspense, useEffect, useState } from 'react';
 import Scene from './models/Scene';
 import { isMobile } from 'react-device-detect';
-import { Perf } from 'r3f-perf';
 
 const Experience = () => {
 	const [cameraZoom, setCameraZoom] = useState<number>(window.innerHeight / (isMobile ? 5.5 : 6.5));
