@@ -2,6 +2,7 @@ import { OrbitControls, OrthographicCamera } from '@react-three/drei';
 import { Suspense, useEffect, useState } from 'react';
 import Scene from './models/Scene';
 import { isMobile } from 'react-device-detect';
+import { Perf } from 'r3f-perf';
 
 const Experience = () => {
 	const [cameraZoom, setCameraZoom] = useState<number>(window.innerHeight / (isMobile ? 5.5 : 6.5));
@@ -28,19 +29,19 @@ const Experience = () => {
 			{/* <Perf position='top-left' /> */}
 			<OrthographicCamera makeDefault zoom={cameraZoom} position={[3, 2.5, 4]} near={2} far={12} />
 			<OrbitControls makeDefault {...controlsProps} />
-			{/* <ambientLight intensity={0.8} /> */}
+			<ambientLight intensity={0.4} />
 			<directionalLight
 				castShadow
 				position={[7, 5, 6]}
-				intensity={1.3}
-				shadow-mapSize-width={1024}
-				shadow-mapSize-height={1024}
-				shadow-camera-near={6}
-				shadow-camera-far={10}
-				shadow-camera-top={2}
-				shadow-camera-bottom={-2}
-				shadow-camera-left={-2}
-				shadow-camera-right={2}
+				intensity={0.5}
+				shadow-mapSize-width={512}
+				shadow-mapSize-height={512}
+				shadow-camera-near={1}
+				shadow-camera-far={20}
+				shadow-camera-top={12}
+				shadow-camera-bottom={-12}
+				shadow-camera-left={-12}
+				shadow-camera-right={12}
 			/>
 			<Suspense fallback={null}>
 				<Scene />
