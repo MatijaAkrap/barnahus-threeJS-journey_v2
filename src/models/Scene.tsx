@@ -12,7 +12,7 @@ const Scene = () => {
 		}
 	});
 
-	return <primitive position={[0.5, -1.2, 0]} object={barnahus.scene} />;
+	return <primitive position={[0.25, -1.31, 0]} object={barnahus.scene} />;
 };
 
 export default Scene;
